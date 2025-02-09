@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h1>LOGIN</h1>
+        <h3>listyy</h3>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="input-box">
+                <i class='bx bx-user-circle'></i>
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+        
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

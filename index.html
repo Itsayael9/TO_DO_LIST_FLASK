@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header-container">
+        <span class="welcome-text">Welcome, Aya!</span>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+
+    <div class="container">
+        <h1>My To-Do List</h1>
+
+        <form method="POST" action="/add" class="task-form">
+            <input type="text" name="task_name" placeholder="Task name" required>
+            <input type="date" name="task_date" required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th>Done</th>
+                    <th>Task</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                    <tr class="{{ 'done' if task.done else '' }}">
+                        <td>
+                            <input type="checkbox" onchange="window.location.href='/toggle/{{ loop.index0 }}'" {% if task.done %}checked{% endif %}>
+                        </td>
+                        <td>{{ task.name }}</td>
+                        <td>{{ task.date }}</td>
+                        <td>
+                            <a href="/delete/{{ loop.index0 }}" class="delete-btn">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

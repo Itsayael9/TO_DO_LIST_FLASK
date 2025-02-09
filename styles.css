@@ -1,0 +1,163 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Login page styling */
+body.login-page {
+    background: url('pexels-carlos-oliva-1966452-3586966.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    background: transparent;
+    border: 2px solid gray;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 20px gray;
+}
+
+.login-container h3 {
+    margin: 5px;
+    color: #333;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* To-Do List page styling */
+body.todo-page {
+    background-color: #f9f9f9;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none; /* No underline */
+    color: #333;
+}
+
+.logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #e60000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-form {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.task-form input,
+.task-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.task-form button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.task-form button:hover {
+    background-color: #0056b3;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.task-table th,
+.task-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.task-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.task-table .done td {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete-btn {
+    color: white;
+    background-color: #101e98;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #e60000;
+}
